@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phasmophobia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="evidence">
+            <img class="item" src="images/spirit_box.png">
+            <img class="item" src="images/fingerprints.jpg">
+            <img class="item" src="images/book.png">
+            <img class="item" src="images/orb.jpg">
+            <img class="item" src="images/EMF.jpg">
+            <img class="item" src="images/temperature.jpg">
+        </div>
+
+        <hr>
+
+        <div id="ghost" class="hidden">
+            <h3 class="title"> Znaleziono ducha</h3>
+            <hr>
+            <div> <span class="bold">Nazwa ducha:</span> <span id="name"></span></div>
+            <div> <span class="bold">Wyjątkowe moce:</span> <span id="power"></span></div>
+            <div> <span class="bold">Słabość:</span> <span id="weakness"></span></div>
+        </div>
+
+        <div id="possibleGhosts">
+
+        </div>
+    </div>
+
+
+    <script src="class/ghost.js"></script>
+    <script src="class/evidence.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
