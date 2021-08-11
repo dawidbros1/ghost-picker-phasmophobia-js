@@ -4,9 +4,8 @@ class Main {
         this.evidence = [];
         this.selectedEvidence = new Array()
         this.ghostsBox = document.getElementById("ghosts");
-
+        this.resetButton = document.getElementById("reset")
         this.items;
-        this.init();
     }
 
     init() {
@@ -18,16 +17,20 @@ class Main {
 
     initActions() {
         // Dodanie wydarzenia onclick na dowodach
-        var main = this;
+        var that = this;
         this.items = document.getElementsByClassName("item");
 
-        for (var i = 0; i < main.items.length; i++) {
+        for (var i = 0; i < that.items.length; i++) {
             (function (i) {
-                main.items[i].addEventListener('click', function (event) {
-                    main.itemClickAction(main.evidence[i].index, main.items[i]);
+                that.items[i].addEventListener('click', function (event) {
+                    that.itemClickAction(that.evidence[i].index, that.items[i]);
                 }, false);
             })(i);
         }
+
+        this.resetButton.addEventListener("click", () => {
+            that.clearSelectedEvidence();
+        });
     }
 
     showGhosts() {
@@ -85,7 +88,8 @@ class Main {
         let intersection = this.selectedEvidence.includes(index); // Czy zawiera taki element
 
         if (intersection == true) {
-            removeA(this.selectedEvidence, index);
+            let indexToRemove = this.selectedEvidence.indexOf(index);
+            this.selectedEvidence.splice(indexToRemove, 1)
             item.classList.remove("redBorder");
         }
         else {
@@ -97,6 +101,19 @@ class Main {
 
         this.showGhosts();
     }
+
+    clearSelectedEvidence() {
+        this.selectedEvidence.forEach(value => {
+            this.items[value - 1].classList.remove("redBorder")
+        });
+
+        this.selectedEvidence = new Array();
+        this.showGhosts();
+    }
 }
 
 var main = new Main();
+
+window.onload = function () {
+    main.init();
+}

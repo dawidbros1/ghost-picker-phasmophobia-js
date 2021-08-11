@@ -9,7 +9,7 @@ body{
     background-color:rgb(159, 151, 187);
 }
 
-.item:hover{
+.item:hover, .no-item:hover{
     cursor: pointer;
 }
 
@@ -32,7 +32,7 @@ body{
 /* Ghost Picker Content */
 /* EXTRA BIG SCREEN */
 
-.item{
+.item, .no-item{
     width: 80%;
     max-width: 100px;
     height: 80px;
@@ -78,7 +78,7 @@ body{
         border-right: none;
     }
 
-    .item{
+    .item, .no-item{
         width: 90px;
         height: 90px;
         margin-top: 6px;
@@ -106,7 +106,7 @@ body{
         height: auto;
     }
 
-    .item{
+    .item, .no-item{
         width: 80px;
         height: 80px;
         margin-top: 4px;
@@ -122,7 +122,7 @@ body{
         width: 416px;
     }
 
-    .item{
+    .item, .no-item{
         width: 100px;
         height: 100px;
     }
