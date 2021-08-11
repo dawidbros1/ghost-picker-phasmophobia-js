@@ -6,34 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phasmophobia</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <main>
-        <header id="title">Phasmophobia</header>
+    <div class="container-fluid d-flex flex-wrap">
+        <header id="title" class="w-100 text-center pb-2 fs-1">Phasmophobia</header>
 
-        <!-- <nav>
-            <a></a>
-            <a>Maps</a>
-        </nav> -->
+        <div id="evidence" class="items d-flex flex-wrap">
+            <img class="item" src="images/spirit_box.png">
+            <img class="item" src="images/fingerprints.jpg">
+            <img class="item" src="images/book.png">
+            <img class="item" src="images/orb.jpg">
+            <img class="item" src="images/EMF.jpg">
+            <img class="item" src="images/temperature.jpg">
 
-        <div id="evidence">
-            <div class="items">
-                <img class="item" src="images/spirit_box.png">
-                <img class="item" src="images/fingerprints.jpg">
-                <img class="item" src="images/book.png">
-                <img class="item" src="images/orb.jpg">
-                <img class="item" src="images/EMF.jpg">
-                <img class="item" src="images/temperature.jpg">
-            </div>
+            <img class="item" src="images/what.png">
+            <img class="item" src="images/reset.png">
         </div>
 
-        <div id="ghosts">
+        <div id="ghosts" class="d-flex flex-wrap">
 
         </div>
-    </main>
+    </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 
     <script src="class/ghost.js"></script>
     <script src="class/evidence.js"></script>

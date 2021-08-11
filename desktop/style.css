@@ -1,124 +1,130 @@
 /* Global content */
 
-/* nav{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-nav a{
-    width: 100%;  // Zależne od ilości elementów w <nav>
-    font-size: 47px;
-    text-align: center;
-    border-bottom: 2px solid #000;
-    border-right: 1px solid black;
-    box-sizing: border-box;
-}
-
-nav a:last-of-type{
-    border-right: none;
-}
-
-a:hover{
-    cursor: pointer;
-} */
-
-#title{
-    width: 100%;
-    text-align: center;
-    font-size: 50px;
-    padding-bottom: 5px;
-    border-bottom: 2px solid #000;
-}
-
-main{
-    display: flex;
-    flex-wrap: wrap;
-}
-
-/* Ghost Picker Content */
-
-#evidence{
-    width: 120px;
-    box-sizing: border-box;
-    border-right: 2px solid black;
-}
-
-.item{
-    width: 100px;
-    height: 100px;
-    border: 2px solid black;
-    box-sizing: border-box;
-    margin-left: 6px;
-    margin-top: 15px;
+body{
+    background-color:rgb(159, 151, 187);
 }
 
 .item:hover{
     cursor: pointer;
 }
 
-#ghosts{
-    display: flex;
-    flex-wrap: wrap;
-    width: calc(100% - 120px);
-    height: 50px;
+.container-fluid{
+    padding: 0px;
+}
+
+.ghost:nth-of-type(1n){
+    background-color: rgb(190, 184, 184);
+}
+
+.ghost:nth-of-type(2n){
+    background-color: lightgray;
+}
+
+.items{
+    background-color:rgb(127, 127, 153);
+}
+
+/* Ghost Picker Content */
+/* EXTRA BIG SCREEN */
+
+.item{
+    width: 80%;
+    max-width: 100px;
+    height: 80px;
+    margin: 2px auto 2px;
+    display: block;
+
+    border-width: 2px;
+    border-style: solid;
 }
 
 .ghost{
     box-sizing: border-box;
     width: 33.33%;
-    min-height: 50px;
-    border-bottom: 2px solid black;
-    border-right: 2px solid black;
     padding: 3px;
+    height: auto;
 }
+
+#evidence{
+    width: 10%;
+}
+
+#ghosts{
+    width: 90%;
+    height: 100px;
+}
+
+/* BIG SCREEN */
 
 @media only screen and (max-width: 1440px) {
     .ghost{
         width: 50.00%;
+        border-bottom: 1px solid black;
     }
 }
 
-@media only screen and (max-width: 960px) {
+
+/* MEDIUM SCREEN */
+
+@media only screen and (max-width: 1200px) {
     #evidence{
         width: 100%;
-        border-bottom: 2px solid #000;
+        height: 100px;
         border-right: none;
     }
 
-    #evidence > div{
-        width: 624px; /* item * 6 */
-        margin: 0 auto 0;
+    .item{
+        width: 90px;
+        height: 90px;
+        margin-top: 6px;
     }
 
     .ghost{
-        width: 100.00%;
-        border-right: none;
+        width: 50.00%;
+        border-bottom: none;
+        border-top: 1px solid black;
     }
 
     #ghosts{
         width: 100%;
     }
 
-    .item{
-        margin: 0;
-        margin-top: 4px;
-    }
-
-    .ghost:last-child{
-        border-bottom: none;
-    }
-
     #title{
         font-size: 26px;
         padding-bottom: 2px;
+    } 
+}
+
+@media only screen and (max-width: 870px) {
+    #evidence {
+        margin: 0 auto 0;
+        height: auto;
+    }
+
+    .item{
+        width: 80px;
+        height: 80px;
+        margin-top: 4px;
+    }
+
+    .ghost{
+        width: 100.00%;
     }
 }
 
-@media only screen and (max-width: 656px) {
-    #evidence > div{
-        width: 312px; /* item * 6 */
-        margin: 0 auto 0;
+@media only screen and (max-width: 720px) {
+    #evidence {
+        width: 416px;
+    }
+
+    .item{
+        width: 100px;
+        height: 100px;
     }
 }
 
@@ -142,4 +148,8 @@ main{
 
 .red{
     color: red;
+}
+
+.border-box{
+    box-sizing: border-box;
 }
