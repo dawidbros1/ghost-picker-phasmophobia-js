@@ -52,11 +52,11 @@ body{
 }
 
 #evidence{
-    width: 10%;
+    width: 90px;
 }
 
 #ghosts{
-    width: 90%;
+    width: calc(100% - 90px);
     height: 100px;
 }
 
