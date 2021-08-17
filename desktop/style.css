@@ -154,3 +154,7 @@ body{
 .border-box{
     box-sizing: border-box;
 }
+
+.op-30{
+    opacity: 30%;
+}

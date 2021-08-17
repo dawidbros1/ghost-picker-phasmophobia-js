@@ -123,14 +123,19 @@ class GhostManager {
         this.ghosts.push(ghost)
     }
 
-    showGhosts(selectedEvidence) {
-        var count = this.evidenceManager.selectedEvidence.length;
+    showGhosts() {
+        var selectedEvidence = this.evidenceManager.selectedEvidence;
+        var rejectedEvidence = this.evidenceManager.rejectedEvidence;
+        var count = selectedEvidence.length;
         this.ghostsBox.innerHTML = "";
 
         this.ghosts.forEach(ghost => {
             let intersection = selectedEvidence.filter(x => ghost.evidence.includes(x));
+            let rejectIntersection = rejectedEvidence.filter(x => ghost.evidence.includes(x));
 
-            if (intersection.length == count) {
+            console.log("reject: " + rejectIntersection);
+
+            if (intersection.length == count && rejectIntersection.length == 0) {
                 this.showGhost(ghost, intersection, count);
             }
         });
@@ -147,6 +152,8 @@ class GhostManager {
 
         html += '<div> <span class="bold">Dowody: </span>';
 
+        var evidence = this.evidenceManager.evidence;
+
         for (var j = 0; j < ghost.evidence.length; j++) {
             var evidenceIndex = ghost.evidence[j];
             var selected = false;
@@ -156,8 +163,6 @@ class GhostManager {
                     selected = true;
                 }
             }
-
-            let evidence = this.evidenceManager.evidence;
 
             if (selected) {
                 html += '<span class = "green">' + evidence[evidenceIndex - 1].name + '</span>, ';

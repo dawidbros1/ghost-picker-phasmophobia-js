@@ -2,6 +2,7 @@ class EvidenceManager {
     constructor() {
         this.evidence = [];
         this.selectedEvidence = new Array()
+        this.rejectedEvidence = new Array();
 
         this.items = document.getElementsByClassName("item");
         this.resetButton = document.getElementById("reset")
@@ -29,6 +30,13 @@ class EvidenceManager {
             });
         }
 
+        for (let i = 0; i < this.items.length; i++) {
+            this.items[i].addEventListener('contextmenu', (ev) => {
+                ev.preventDefault();
+                this.itemRejectAction(this.evidence[i].index, this.items[i]);
+            });
+        }
+
         this.resetButton.addEventListener("click", () => {
             this.clearSelectedEvidence();
         });
@@ -53,7 +61,23 @@ class EvidenceManager {
             }
         }
 
-        this.ghostManager.showGhosts(this.selectedEvidence);
+        this.ghostManager.showGhosts();
+    }
+
+    itemRejectAction(index, item) {
+        let intersection = this.rejectedEvidence.includes(index); // Czy zawiera taki element
+
+        if (intersection == true) {
+            let indexToRemove = this.rejectedEvidence.indexOf(index);
+            this.rejectedEvidence.splice(indexToRemove, 1)
+            item.classList.remove("op-30");
+        }
+        else {
+            this.rejectedEvidence.push(index);
+            item.classList.add("op-30")
+        }
+
+        this.ghostManager.showGhosts();
     }
 
     clearSelectedEvidence() {
@@ -61,7 +85,13 @@ class EvidenceManager {
             this.items[value - 1].classList.remove("redBorder")
         });
 
+        this.rejectedEvidence.forEach(value => {
+            this.items[value - 1].classList.remove("op-30")
+        });
+
         this.selectedEvidence = new Array();
+        this.rejectedEvidence = new Array();
+
         this.ghostManager.showGhosts([]);
     }
 }
