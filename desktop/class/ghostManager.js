@@ -136,7 +136,7 @@ class GhostManager {
             console.log("reject: " + rejectIntersection);
 
             if (intersection.length == count && rejectIntersection.length == 0) {
-                this.showGhost(ghost, intersection, count);
+                this.showGhost(ghost, intersection, count + rejectedEvidence.length);
             }
         });
     }
