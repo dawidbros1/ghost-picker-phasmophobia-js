@@ -1,0 +1,54 @@
+/* Ghost */
+
+.item, .no-item{
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin: 4px auto;
+    border-width: 2px;
+    border-style: solid;
+    box-sizing: border-box;
+}
+
+.ghost{
+    box-sizing: border-box;
+    width: 50.00%;
+    padding: 3px;
+    height: auto;
+    border-bottom: 1px solid black;
+}
+
+.ghost:nth-of-type(1n){
+    background-color: rgb(190, 184, 184);
+}
+
+.ghost:nth-of-type(2n){
+    background-color: lightgray;
+}
+
+#ghosts{
+    width: calc(100% - 100px);
+    height: 100px;
+    opacity: 0.80;
+}
+
+/* Evidence */
+
+.item:hover, .no-item:hover{
+    cursor: pointer;
+}
+
+#evidence{
+    background-color: rgb(172, 205, 235);
+    opacity: 0.7;
+    height: calc(100vh - 50px);
+    width: 100px;
+}
+
+/* Range */
+
+#range{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
