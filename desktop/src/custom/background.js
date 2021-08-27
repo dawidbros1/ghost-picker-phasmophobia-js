@@ -7,7 +7,7 @@ class Background {
         this.buttons = document.querySelectorAll("#bgi-window button");
 
         this.bgiInput = document.getElementById("bgi-input");
-        this.basicImage = "./../images/bgi.jpg";
+        this.basicImage = "./images/bgi.jpg";
     }
 
     init() {
