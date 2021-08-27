@@ -21,14 +21,6 @@
         <header id="title" class="w-100 text-center fs-1">Phasmophobia</header>
 
         <div id="evidence" class="items d-flex flex-wrap">
-            <img class="item" src="images/spirit_box.png">
-            <img class="item" src="images/fingerprints.jpg">
-            <img class="item" src="images/book.png">
-            <img class="item" src="images/orb.jpg">
-            <img class="item" src="images/EMF.jpg">
-            <img class="item" src="images/temperature.jpg">
-
-            <img class="no-item" src="images/what.png">
             <img class="no-item" id="reset" src="images/reset.png">
         </div>
 
@@ -36,8 +28,28 @@
 
         </div>
 
+        <!-- Custon fixed elements -->
+
+        <!-- range => change opacity -->
         <input type="range" id="range">
 
+        <!-- window => change bgi -->
+        <img id="select-bgi" src="images/pictures.png" />
+        <div id="bgi-window" class="hidden">
+            <div class="h1">Komunikat ze strony</div>
+            <div>Wprowadź adres nowego tła aplikacji: </div>
+            <input class="w-100 px-2 py-1 mt-1" id="bgi-input">
+
+            <hr>
+
+            <div class="position-absolute w-100">
+                <button id="ok" data-action="ok">OK</button>
+                <button id="reject" data-action="cancel">Anuluj</button>
+                <button id="restore" data-action="restore">Przywróć domyślny</button>
+            </div>
+        </div>
+
+        <!--  -->
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -53,7 +65,13 @@
     <script src="src/manager/evidenceManager.js"></script>
     <script src="src/manager/ghostManager.js"></script>
 
-    <script src="src/ui.js"></script>
+    <!-- Recorders -->
+    <script src="src/recorder/ghostsRecorder.js"></script>
+    <script src="src/recorder/evidenceRecorder.js"></script>
+
+    <!-- Custom -->
+    <script src="src/custom/range.js"></script>
+    <script src="src/custom/background.js"></script>
 
     <script src="src/main.js"></script>
 </body>

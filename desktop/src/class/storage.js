@@ -6,4 +6,8 @@ class Storage {
     get(name) {
         return localStorage.getItem(name)
     }
+
+    clear(name) {
+        localStorage.clear(name);
+    }
 }

@@ -1,4 +1,4 @@
-class UI {
+class Range {
     constructor() {
         this.range = document.getElementById("range");
         this.ghosts = document.getElementById("ghosts");

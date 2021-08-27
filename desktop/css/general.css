@@ -12,7 +12,8 @@ body{
 }
 
 #title{
-    background-color: rgb(172, 205, 235);
+    background-color: black;
+    color: white;
     opacity: 0.70;
     height: 50px;
     border-bottom: 1px solid #000;
@@ -30,6 +31,7 @@ body{
 
 .redBorder{
     border-color: red !important;
+    border-width: 2px;
 }
 
 .hidden{
