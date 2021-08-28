@@ -10,7 +10,7 @@ class Main {
         this.evidenceManager.init(this.ghostManager);
         this.ghostManager.init(this.evidenceManager);
         this.range.init();
-        this.backgrounds.init();
+        // this.backgrounds.init();
     }
 }
 

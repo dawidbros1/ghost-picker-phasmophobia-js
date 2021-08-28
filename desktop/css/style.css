@@ -1,3 +1,18 @@
+/* Other */
+
+#title{
+    background-color: black;
+    color: white;
+    opacity: 0.70;
+    height: 45px;
+    font-size: 30px;
+    border-bottom: 1px solid #000;
+}
+
+.container-fluid{
+    padding: 0px;
+}
+
 /* Ghost */
 
 .item, .no-item{
@@ -28,7 +43,7 @@
 }
 
 #ghosts{
-    width: calc(100% - 100px);
+    width: calc(100% - 100px); /* -evidence width */
     height: 100px;
     opacity: 0.75; /* Basic */
 }
@@ -42,7 +57,7 @@
 #evidence{
     background-color: rgb(24, 23, 23);
     opacity: 0.8;
-    height: calc(100vh - 50px);
+    height: calc(100vh - 45px); /* - title height */
     width: 100px;
 }
 

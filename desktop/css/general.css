@@ -7,20 +7,8 @@
 body{
     background-color:rgb(159, 151, 187);
     background-image: url("./../images/bgi.jpg");
-    background-position: cover;
+    background-position: center;
     background-size: cover;
-}
-
-#title{
-    background-color: black;
-    color: white;
-    opacity: 0.70;
-    height: 50px;
-    border-bottom: 1px solid #000;
-}
-
-.container-fluid{
-    padding: 0px;
 }
 
 /* Others */
