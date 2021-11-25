@@ -6,17 +6,9 @@ class Ghost {
         this.evidence = evidence;
     }
 
-    setRight(right) {
-        this.right = right;
-    }
-
-    calcLeft(max) {
-        this.left = max - this.right + 1;
-    }
-
     show(evidence, details, eManager, ghostsBox) {
         let html = '<div class = "ghost">';
-        html += `<div> <span class="bold">Nazwa ducha: </span> ${this.name} [${this.left}, ${this.right}] </div>`;
+        html += `<div> <span class="bold">Nazwa ducha: </span> ${this.name} </div>`;
 
         if (details == true) {
             html += '<div> <span class="bold">Wyjątkowe moce: </span> ' + this.power + '</div>';

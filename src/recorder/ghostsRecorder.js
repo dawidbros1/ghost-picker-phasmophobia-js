@@ -119,16 +119,40 @@ class GhostsRecorder {
         evidence = [5, 2, 3];
         this.registerGhost(new Ghost(name, power, weakness, evidence));
 
-        this.ghosts.forEach(ghost => {
-            ghost.calcLeft(this.ghosts.length);
-        });
+        // ===
 
+        // Ovryo
+        name = "Onryo";
+        power = "Zgaszenie płomienie może sprowokować atak Onryo";
+        weakness = "Gdy jest zagrożony duch będzie mniej skłonny do polowania";
+        evidence = [1, 4, 6];
+        this.registerGhost(new Ghost(name, power, weakness, evidence));
+
+        // The Twins
+        name = "The Twins";
+        power = "Każdy z blożiaków może się rozgniewać i zaatakować swoją ofiarę";
+        weakness = "Często wchodzą w interakcje z otoczeniem w tym samym czasie";
+        evidence = [5, 1, 6];
+        this.registerGhost(new Ghost(name, power, weakness, evidence));
+
+        // Raiju
+        name = "Raiju";
+        power = "Raiju pobiera energię z pobliskich urządzeń elektrycznych dzięki czemu porusza się szybciej";
+        weakness = "Raiju nieustannie zakłuca działanie sprzętu elektronicznego ułatwiając śledzenie podczas ataku";
+        evidence = [5, 4, 7];
+        this.registerGhost(new Ghost(name, power, weakness, evidence));
+
+        // Obake
+        name = "Obake";
+        power = "Podczas interkacji z otoczeniem Obake rzadko pozostawia ślady";
+        weakness = "Czasami ten duch zmienia kształt, pozostawiając po sobie unikalne dowody";
+        evidence = [5, 2, 4];
+        this.registerGhost(new Ghost(name, power, weakness, evidence));
         return this.ghosts;
     }
 
     // Register Simple Ghost
     registerGhost(ghost) {
-        ghost.setRight(this.index++)
         this.ghosts.push(ghost);
     }
 }
