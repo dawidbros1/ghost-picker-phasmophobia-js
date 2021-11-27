@@ -12,8 +12,7 @@ class Range {
 
     setDefault() {
         if (storage.get(this.storageName) == null) {
-            // Ustaw wartość domyślną
-            storage.set(this.storageName, 75)
+            storage.set(this.storageName, 75) // Ustaw wartość domyślną
         }
         else {
             // Pobierz wartość ustawioną przez użytkownika

@@ -1,6 +1,6 @@
 /* Other */
 
-#title{
+#title {
     background-color: black;
     color: white;
     opacity: 0.70;
@@ -9,13 +9,14 @@
     border-bottom: 1px solid #000;
 }
 
-.container-fluid{
-    padding: 0px;
+.container-fluid {
+    padding: 0;
 }
 
 /* Ghost */
 
-.item, .no-item{
+.item,
+.no-item {
     display: block;
     width: 80px;
     height: 80px;
@@ -26,7 +27,7 @@
     box-sizing: border-box;
 }
 
-.ghost{
+.ghost {
     box-sizing: border-box;
     width: 50.00%;
     padding: 3px;
@@ -34,15 +35,15 @@
     border-bottom: 1px solid black;
 }
 
-.ghost:nth-of-type(1n){
+.ghost:nth-of-type(1n) {
     background-color: rgb(190, 184, 184);
 }
 
-.ghost:nth-of-type(2n){
+.ghost:nth-of-type(2n) {
     background-color: lightgray;
 }
 
-#ghosts{
+#ghosts {
     width: calc(100% - 100px); /* -evidence width */
     height: 100px;
     opacity: 0.75; /* Basic */
@@ -50,11 +51,12 @@
 
 /* Evidence */
 
-.item:hover, .no-item:hover{
+.item:hover,
+.no-item:hover {
     cursor: pointer;
 }
 
-#evidence{
+#evidence {
     background-color: rgb(24, 23, 23);
     opacity: 0.8;
     height: calc(100vh - 45px); /* - title height */
@@ -63,7 +65,7 @@
 
 /* Range */
 
-#range{
+#range {
     position: fixed;
     right: 10px;
     bottom: 10px;
@@ -71,19 +73,30 @@
 
 /* Select BGI */
 
-#select-bgi{
+.icon {
+    width: 30px;
+    height: 30px;
+}
+
+#microphone {
+    position: fixed;
+    right: 10px;
+    bottom: 75px;
+
+    background-color: white;
+    cursor: pointer;
+    padding: 2px;
+}
+
+#select-bgi {
     position: fixed;
     right: 10px;
     bottom: 35px;
-
     background-color: red;
-    width: 30px;
-    height: 30px;
-
     cursor: pointer;
 }
 
-#bgi-window{
+#bgi-window {
     position: fixed;
     top: 35%;
     height: 180px;
@@ -97,35 +110,35 @@
     border: 1px solid black;
 }
 
-#bgi-window button{
-   padding-top: 2px;
-   padding-bottom: 2px;
-   position: absolute;
-   border-radius: 10%;
+#bgi-window button {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    position: absolute;
+    border-radius: 10%;
 }
 
-button#ok{
+button#ok {
     background-color: blue;
     color: white;
-    width:60px;
+    width: 60px;
     right: 90px;
     top: 0;
 }
 
-button#reject{
+button#reject {
     background-color: white;
     color: blue;
-    width:60px;
+    width: 60px;
     border: 1px solid gray;
 
     right: 25px;
     top: 0;
 }
 
-button#restore{
+button#restore {
     background-color: lightgreen;
     color: black;
-    width:140px;
+    width: 140px;
     border: 1px solid black;
     border-radius: 5%;
 }

@@ -32,9 +32,10 @@
 
         <!-- range => change opacity -->
         <input type="range" id="range">
-
+        <!-- window => on/off micro -->
+        <img id="microphone" class="icon" src="images/microphone_off.png" />
         <!-- window => change bgi -->
-        <img id="select-bgi" src="images/pictures.png" />
+        <img id="select-bgi" class="icon" src="images/pictures.png" />
         <div id="bgi-window" class="hidden">
             <div class="h1">Komunikat ze strony</div>
             <div>Wprowadź adres nowego tła aplikacji: </div>
@@ -56,22 +57,25 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
-    <!-- classes -->
-    <script src="src/class/ghost.js"></script>
-    <script src="src/class/evidence.js"></script>
-    <script src="src/class/storage.js"></script>
+    <!-- Models -->
+    <script src="src/Model/ghost.js"></script>
+    <script src="src/Model/evidence.js"></script>
+    <script src="src/Model/storage.js"></script>
+    <script src="src/Model/speechListener.js"></script>
+    <script src="src/Model/dictionary.js"></script>
 
     <!-- Managers -->
-    <script src="src/manager/evidenceManager.js"></script>
-    <script src="src/manager/ghostManager.js"></script>
+    <script src="src/Manager/evidenceManager.js"></script>
+    <script src="src/Manager/ghostManager.js"></script>
 
-    <!-- Recorders -->
-    <script src="src/recorder/ghostsRecorder.js"></script>
-    <script src="src/recorder/evidenceRecorder.js"></script>
+    <!-- Database -->
+    <script src="src/Database/evidenceDatabase.js"></script>
+    <script src="src/Database/ghostDatabase.js"></script>
+    <script src="src/Database/database.js"></script>
 
     <!-- Custom -->
-    <script src="src/custom/range.js"></script>
-    <script src="src/custom/background.js"></script>
+    <script src="src/Custom/range.js"></script>
+    <script src="src/Custom/background.js"></script>
 
     <script src="src/main.js"></script>
 </body>

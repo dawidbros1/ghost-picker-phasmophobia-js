@@ -1,12 +1,12 @@
 class Ghost {
-    constructor(name, power, weakness, evidence) {
-        this.name = name;
-        this.power = power;
-        this.weakness = weakness;
-        this.evidence = evidence;
+    constructor(array) {
+        this.name = array['name'];
+        this.power = array['power'];
+        this.weakness = array['weakness'];
+        this.evidences = array['evidences'];
     }
 
-    show(evidence, details, eManager, ghostsBox) {
+    render(evidences, details, eManager, ghostsBox) {
         let html = '<div class = "ghost">';
         html += `<div> <span class="bold">Nazwa ducha: </span> ${this.name} </div>`;
 
@@ -17,23 +17,23 @@ class Ghost {
 
         html += '<div> <span class="bold">Dowody: </span>';
 
-        for (var j = 0; j < this.evidence.length; j++) {
-            var evidenceIndex = this.evidence[j];
+        for (var j = 0; j < this.evidences.length; j++) {
+            var evidencesIndex = this.evidences[j];
             var selected = false;
 
-            for (var k = 0; k < evidence.length; k++) {
-                if (evidence[k] == evidenceIndex) {
+            for (var k = 0; k < evidences.length; k++) {
+                if (evidences[k] == evidencesIndex) {
                     selected = true;
                 }
             }
 
             if (selected) {
-                html += '<span class = "green">' + eManager.evidence[evidenceIndex - 1].name + '</span>, ';
+                html += '<span class = "green">' + eManager.evidences[evidencesIndex - 1].name + '</span>, ';
             }
             else {
                 let cl = "red";
-                if (evidence.length == 2) cl += " bold"
-                html += '<span class = "' + cl + '">' + eManager.evidence[evidenceIndex - 1].name + '</span>, ';
+                if (evidences.length == 2) cl += " bold"
+                html += '<span class = "' + cl + '">' + eManager.evidences[evidencesIndex - 1].name + '</span>, ';
             }
         }
 

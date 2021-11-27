@@ -1,53 +1,53 @@
 class EvidenceManager {
     constructor() {
-        this.evidence = [];
-        this.selectedEvidence = new Array()
-        this.rejectedEvidence = new Array();
+        this.evidences = [];
+        this.selectedEvidences = new Array()
+        this.rejectedEvidences = new Array();
 
-        // HTML STATIC
+        // HTML FIELDS
         this.resetButton = document.getElementById("reset")
-        this.evidenceHTML = document.getElementById('evidence');
+        this.evidencesHTML = document.getElementById('evidence');
     }
 
-    init(ghostManager) {
+    init(ghostManager, evidences) {
         this.ghostManager = ghostManager;
-        this.evidence = evidenceRecorder.registerEvidences();
+        this.evidences = evidences;
 
-        this.evidence.forEach((evidence) => {
-            evidence.show(this.evidenceHTML);
-            evidence.initClickAction(this);
+        this.evidences.forEach((evidences) => {
+            evidences.render(this.evidencesHTML);
+            evidences.initClickAction(this);
         })
 
         this.items = document.getElementsByClassName("item");
 
-        this.evidenceHTML.addEventListener('click', () => {
+        this.evidencesHTML.addEventListener('click', () => {
             this.ghostManager.showGhosts();
         })
 
-        this.evidenceHTML.addEventListener('contextmenu', () => {
+        this.evidencesHTML.addEventListener('contextmenu', () => {
             this.ghostManager.showGhosts();
         })
 
         this.resetButton.addEventListener('click', () => {
-            this.clearEvidence();
+            this.clearEvidences();
         })
     }
 
-    clearEvidence() {
-        this.selectedEvidence.forEach(value => {
+    clearEvidences() {
+        this.selectedEvidences.forEach(value => {
             this.items[value - 1].classList.remove("redBorder")
         });
 
-        this.rejectedEvidence.forEach(value => {
+        this.rejectedEvidences.forEach(value => {
             this.items[value - 1].classList.remove("op-30")
         });
 
-        this.evidence.forEach(proof => {
+        this.evidences.forEach(proof => {
             proof.reset();
         });
 
-        this.selectedEvidence = [];
-        this.rejectedEvidence = [];
+        this.selectedEvidences = [];
+        this.rejectedEvidences = [];
 
         this.ghostManager.showGhosts([]);
     }
