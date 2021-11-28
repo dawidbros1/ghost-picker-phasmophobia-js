@@ -1,18 +1,17 @@
 class GhostManager {
     constructor() {
-        this.ghosts = [];
+        this.ghosts = (new Database).getGhosts();
         this.ghostsBox = document.getElementById("ghosts");
     }
 
-    init(evidenceManager, ghosts) {
+    init(evidenceManager) {
         this.evidenceManager = evidenceManager;
-        this.ghosts = ghosts;
         this.showGhosts([]);
     }
 
     showGhosts() {
-        var selectedEvidences = this.evidenceManager.selectedEvidences;
-        var rejectedEvidences = this.evidenceManager.rejectedEvidences;
+        var selectedEvidences = this.evidenceManager.getSelectedEvidences();
+        var rejectedEvidences = this.evidenceManager.getRejectedEvidences();
         var count = selectedEvidences.length;
         this.ghostsBox.innerHTML = "";
 
@@ -30,7 +29,7 @@ class GhostManager {
     }
 
     findGhost() {
-        var SE = this.evidenceManager.selectedEvidences;
+        var SE = this.evidenceManager.getSelectedEvidences();
         var selectedGhost;
 
         if (SE.length == 3) {

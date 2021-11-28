@@ -9,7 +9,7 @@ class SpeechListener {
 
         this.microphone = {
             'on': false,
-            'icon': document.getElementById('microphone')
+            'body': document.getElementById('microphone')
         }
     }
 
@@ -28,48 +28,43 @@ class SpeechListener {
 
         recognition.onresult = (event) => {
             let word = event.results[0][0].transcript.toLowerCase();
-            let index = 'empty';
+            let index = 'reset';
             let name = "";
-            let status = "";
             speech.text = "";
             console.log(word);
 
-            if (this.dictionary.get('spirit_box').includes(word)) { index = 0; name = "Spirit Box" }
-            else if (this.dictionary.get('fingerprints').includes(word)) { index = 1; name = "Odcisku palców" }
-            else if (this.dictionary.get('book').includes(word)) { index = 2, name = "Pismo ducha" }
-            else if (this.dictionary.get('orb').includes(word)) { index = 3, name = "Orby" }
-            else if (this.dictionary.get('EMF').includes(word)) { index = 4, name = "EMF Poziom 5" }
-            else if (this.dictionary.get('temperature').includes(word)) { index = 5, name = "Mroźna temperatura" }
-            else if (this.dictionary.get('dotc').includes(word)) { index = 6, name = "Projektor" }
+            if (this.dictionary.get('spirit_box').includes(word)) { index = 1; name = "Spirit Box" }
+            else if (this.dictionary.get('fingerprints').includes(word)) { index = 2; name = "Odcisku palców" }
+            else if (this.dictionary.get('book').includes(word)) { index = 3, name = "Pismo ducha" }
+            else if (this.dictionary.get('orb').includes(word)) { index = 4, name = "Orby" }
+            else if (this.dictionary.get('EMF').includes(word)) { index = 5, name = "EMF Poziom 5" }
+            else if (this.dictionary.get('temperature').includes(word)) { index = 6, name = "Mroźna temperatura" }
+            else if (this.dictionary.get('dotc').includes(word)) { index = 7, name = "Projektor" }
             else if (this.dictionary.get('reset').includes(word)) {
-                this.evidenceManager.resetButton.click();
+                this.evidenceManager.clearEvidences();
                 speech.text = "Nastąpił reset wybranych dowodów";
             }
 
-            if (index != 'empty') {
-                status = !this.evidenceManager.evidences[index].selected ? "Zaznaczony" : "Odznaczony";
+            if (index != 'reset') {
+                let evidence = this.evidenceManager.findEvidenceByIndex(index);
+                let result = this.evidenceManager.selectEvidence(evidence);
 
-                if (status == "Zaznaczony" && this.evidenceManager.selectedEvidences.length > 2) {
-                    speech.text = "Odmowa wykonania akcji: Została zaznaczona maksymalna ilość dowodów";
-                    window.speechSynthesis.speak(speech);
+                if (result == false) {
+                    this.speak("Nie można zaznaczyć więcej dowodów");
                     return 0;
                 }
 
-                this.evidenceManager.evidences[index].select(this.evidenceManager.selectedEvidences);
-                this.ghostManager.showGhosts();
-                speech.text = "Dowód" + name + "został" + status;
+                speech.text = "Dowód" + name + "został" + evidence.selected ? "Zaznaczony" : "Odznaczony";
 
-                if (this.evidenceManager.selectedEvidences.length == 3) {
+                if (this.evidenceManager.getSelectedEvidences().length == 3) {
                     setTimeout(() => {
                         let ghost = this.ghostManager.findGhost();
 
                         if (!(ghost == undefined || ghost == "undefined")) {
-                            speech.text = "Duchem, który nawiedział ten budynek jest: " + ghost.name;
-                            window.speechSynthesis.speak(speech);
+                            this.speak("Duchem, który nawiedział ten budynek jest: " + ghost.name);
                         }
                         else {
-                            speech.text = "Zaznaczone dowody nie wskazują na obecność znanego ducha!";
-                            window.speechSynthesis.speak(speech);
+                            this.speak("Zaznaczone dowody nie wskazują na obecność znanego ducha!");
                         }
 
                     }, 2000)
@@ -79,17 +74,22 @@ class SpeechListener {
             window.speechSynthesis.speak(speech);
         }
 
-        this.microphone.icon.addEventListener('click', () => {
+        this.microphone.body.addEventListener('click', () => {
             if (this.microphone.on == false) {
                 this.microphone.on = true;
-                this.microphone.icon.setAttribute('src', 'images/microphone_on.png');
+                this.microphone.body.setAttribute('src', 'images/microphone_on.png');
                 recognition.start();
             }
             else {
-                this.microphone.icon.setAttribute('src', 'images/microphone_off.png');
+                this.microphone.body.setAttribute('src', 'images/microphone_off.png');
                 this.microphone.on = false;
             }
         })
+    }
+
+    speak(text) {
+        speech.text = text;
+        window.speechSynthesis.speak(speech);
     }
 
     setSettings() {

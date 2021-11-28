@@ -1,54 +1,119 @@
 class EvidenceManager {
     constructor() {
-        this.evidences = [];
-        this.selectedEvidences = new Array()
-        this.rejectedEvidences = new Array();
-
-        // HTML FIELDS
-        this.resetButton = document.getElementById("reset")
-        this.evidencesHTML = document.getElementById('evidence');
+        this.evidences = (new Database).getEvidences();
+        this.evidencesBox = document.getElementById('evidences');
     }
 
-    init(ghostManager, evidences) {
+    init(ghostManager) {
         this.ghostManager = ghostManager;
-        this.evidences = evidences;
 
-        this.evidences.forEach((evidences) => {
-            evidences.render(this.evidencesHTML);
-            evidences.initClickAction(this);
+        this.evidences.forEach((evidence) => {
+            evidence.render(this.evidencesBox);
         })
 
-        this.items = document.getElementsByClassName("item");
+        this.initLeftClickAction();
+        this.initRightClickAction();
+        this.createResetButton();
+    }
 
-        this.evidencesHTML.addEventListener('click', () => {
+    // ALL FOR LEFT CLICK
+    initLeftClickAction() {
+        let evidences = document.getElementsByClassName("item");
+
+        for (let i = 0; i < evidences.length; i++) {
+            evidences[i].addEventListener('click', () => {
+                this.selectEvidence(this.evidences[i])
+            })
+        }
+    }
+
+    selectEvidence(e) {
+        let SE = this.getSelectedEvidences();
+        let RE = this.getRejectedEvidences();
+        let intersection = SE.includes(e.index);
+
+        if (RE.includes(e.index) == false) {
+            if ((intersection == false && SE.length < 3) || intersection == true) {
+                e.select();
+                this.ghostManager.showGhosts();
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    getSelectedEvidences() {
+        let selectedEvidences = [];
+
+        this.evidences.forEach(evidence => {
+            if (evidence.selected == true) {
+                selectedEvidences.push(evidence.index);
+            }
+        });
+
+        return selectedEvidences;
+    }
+
+    // ALL FOR RIGHT CLICK
+    initRightClickAction() {
+        let evidences = document.getElementsByClassName("item");
+
+        for (let i = 0; i < evidences.length; i++) {
+            evidences[i].addEventListener('contextmenu', (e) => {
+                e.preventDefault();
+                this.rejectEvidence(this.evidences[i])
+            })
+        }
+    }
+
+    rejectEvidence(e) {
+        let SE = this.getSelectedEvidences();
+        let intersection = SE.includes(e.index);
+
+        if (intersection == false) {
+            e.reject();
             this.ghostManager.showGhosts();
-        })
+        }
+    }
 
-        this.evidencesHTML.addEventListener('contextmenu', () => {
-            this.ghostManager.showGhosts();
-        })
+    getRejectedEvidences() {
+        let rejectedEvidences = [];
 
-        this.resetButton.addEventListener('click', () => {
+        this.evidences.forEach(evidence => {
+            if (evidence.rejected == true) {
+                rejectedEvidences.push(evidence.index);
+            }
+        });
+
+        return rejectedEvidences;
+    }
+
+    // OTHER
+    clearEvidences() {
+        this.evidences.forEach(e => {
+            e.reset();
+        });
+
+        this.ghostManager.showGhosts();
+    }
+
+    createResetButton() {
+        let button;
+        button = document.createElement("img");
+        button.setAttribute('src', 'images/reset.png');
+        button.setAttribute('id', 'reset');
+        button.classList.add("no-item")
+
+        this.evidencesBox.appendChild(button);
+        button.addEventListener('click', () => {
             this.clearEvidences();
         })
     }
 
-    clearEvidences() {
-        this.selectedEvidences.forEach(value => {
-            this.items[value - 1].classList.remove("redBorder")
+    findEvidenceByIndex(index) {
+        this.evidences.forEach(evidence => {
+            if (evidence.index == index) return evidence;
         });
-
-        this.rejectedEvidences.forEach(value => {
-            this.items[value - 1].classList.remove("op-30")
-        });
-
-        this.evidences.forEach(proof => {
-            proof.reset();
-        });
-
-        this.selectedEvidences = [];
-        this.rejectedEvidences = [];
-
-        this.ghostManager.showGhosts([]);
     }
 }
