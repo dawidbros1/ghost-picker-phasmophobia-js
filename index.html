@@ -14,28 +14,30 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/background.css">
 </head>
 
 <body>
     <div class="container-fluid d-flex flex-wrap">
         <header id="title" class="w-100 text-center">Phasmophobia</header>
+        <div id="evidences" class="items d-flex flex-wrap"></div>
+        <div id="ghosts" class="d-flex flex-wrap"></div>
 
-        <div id="evidences" class="items d-flex flex-wrap">
 
+        <!-- Bars -->
+        <div id="volume" class="bar">
+            <img src="images/volume.png">
+            <input type="range" id="volumeBar">
+            <img id="microphone" class="icon" src="images/microphone_off.png" />
         </div>
 
-        <div id="ghosts" class="d-flex flex-wrap">
-
+        <div id="visibility" class="bar">
+            <img src="images/visibility.png">
+            <input type="range" id="visibilityBar">
+            <img id="select-bgi" class="icon" src="images/pictures.png" />
         </div>
 
-        <!-- Custon fixed elements -->
-
-        <!-- range => change opacity -->
-        <input type="range" id="range">
-        <!-- window => on/off micro -->
-        <img id="microphone" class="icon" src="images/microphone_off.png" />
-        <!-- window => change bgi -->
-        <img id="select-bgi" class="icon" src="images/pictures.png" />
+        <!-- window => open window -->
         <div id="bgi-window" class="hidden">
             <div class="h1">Komunikat ze strony</div>
             <div>Wprowadź adres nowego tła aplikacji: </div>
@@ -49,8 +51,6 @@
                 <button id="restore" data-action="restore">Przywróć domyślny</button>
             </div>
         </div>
-
-        <!--  -->
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -60,8 +60,6 @@
     <!-- Models -->
     <script src="src/Model/ghost.js"></script>
     <script src="src/Model/evidence.js"></script>
-    <script src="src/Model/storage.js"></script>
-    <script src="src/Model/speechListener.js"></script>
     <script src="src/Model/dictionary.js"></script>
 
     <!-- Managers -->
@@ -71,11 +69,17 @@
     <!-- Database -->
     <script src="src/Database/evidenceDatabase.js"></script>
     <script src="src/Database/ghostDatabase.js"></script>
+    <script src="src/Database/feedbackDatabase.js"></script>
     <script src="src/Database/database.js"></script>
 
-    <!-- Custom -->
-    <script src="src/Custom/range.js"></script>
-    <script src="src/Custom/background.js"></script>
+    <!-- Additives -->
+    <script src="src/Additives/background.js"></script>
+    <script src="src/Additives/speechListener.js"></script>
+    <script src="src/Additives/Range/visibilityBar.js"></script>
+    <script src="src/Additives/Range/volumeBar.js"></script>
+
+    <!-- Helper -->
+    <script src="src/Helper/storage.js"></script>
 
     <script src="src/main.js"></script>
 </body>

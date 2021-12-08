@@ -8,6 +8,8 @@ class Background {
 
         this.bgiInput = document.getElementById("bgi-input");
         this.basicImage = "./images/bgi.jpg";
+
+        this.range = new VisibilityBar();
     }
 
     init() {
@@ -16,6 +18,7 @@ class Background {
             this.window.classList.toggle('hidden')
         })
 
+        this.range.init();
         this.initButtonsClick();
     }
 

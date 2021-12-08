@@ -1,6 +1,6 @@
-class Range {
+class VisibilityBar {
     constructor() {
-        this.range = document.getElementById("range");
+        this.range = document.getElementById("visibilityBar");
         this.ghosts = document.getElementById("ghosts");
         this.storageName = "ghosts-opacity";
     }
@@ -12,24 +12,23 @@ class Range {
 
     setDefault() {
         if (storage.get(this.storageName) == null) {
-            storage.set(this.storageName, 75) // Ustaw wartość domyślną
+            storage.set(this.storageName, 75)
         }
         else {
-            // Pobierz wartość ustawioną przez użytkownika
             let value = storage.get(this.storageName)
             this.range.value = value;
-            this.updateRange(value)
+            this.updateVisibility(value)
         }
     }
 
     initRange() {
         this.range.addEventListener('input', (e) => {
-            let value = range.value;
-            this.updateRange(value)
+            let value = this.range.value;
+            this.updateVisibility(value)
         })
     }
 
-    updateRange(value) {
+    updateVisibility(value) {
         this.ghosts.style.opacity = value / 100;
         this.range.setAttribute('title', value + "%");
         storage.set(this.storageName, value)

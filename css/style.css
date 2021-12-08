@@ -1,4 +1,4 @@
-/* Other */
+/* General */
 
 #title {
     background-color: black;
@@ -63,82 +63,40 @@
     width: 100px;
 }
 
-/* Range */
+/* BAR [ Volume || Visibility ] */
 
-#range {
-    position: fixed;
+.bar{
     right: 10px;
-    bottom: 10px;
+    position: fixed;
+    border: 2px solid red;
+    background-color: orange;
 }
 
-/* Select BGI */
+.bar > img{
+    background-color: white;
+    padding: 2px;
+    width: 30px;
+    height: 30px;
+    position: relative;
+}
+
+#volumeBar, #visibilityBar{
+    position: relative;
+    top: 4px;
+}
 
 .icon {
     width: 30px;
     height: 30px;
-}
-
-#microphone {
-    position: fixed;
-    right: 10px;
-    bottom: 75px;
-
+    position: relative;
     background-color: white;
     cursor: pointer;
-    padding: 2px;
 }
 
-#select-bgi {
-    position: fixed;
-    right: 10px;
-    bottom: 35px;
-    background-color: red;
-    cursor: pointer;
+#visibility{
+    bottom: 10px;
 }
 
-#bgi-window {
-    position: fixed;
-    top: 35%;
-    height: 180px;
-
-    left: 10%;
-    width: 80%;
-
-    background-color: white;
-    padding: 10px;
-
-    border: 1px solid black;
-}
-
-#bgi-window button {
-    padding-top: 2px;
-    padding-bottom: 2px;
-    position: absolute;
-    border-radius: 10%;
-}
-
-button#ok {
-    background-color: blue;
-    color: white;
-    width: 60px;
-    right: 90px;
-    top: 0;
-}
-
-button#reject {
-    background-color: white;
-    color: blue;
-    width: 60px;
-    border: 1px solid gray;
-
-    right: 25px;
-    top: 0;
-}
-
-button#restore {
-    background-color: lightgreen;
-    color: black;
-    width: 140px;
-    border: 1px solid black;
-    border-radius: 5%;
+#volume{
+    bottom: 50px;
 }

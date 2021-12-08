@@ -3,6 +3,7 @@ class Evidence {
         this.index = array['index'];
         this.name = array['name'];
         this.img = array['img'];
+        this.output = array['output'] ?? null;
 
         this.selected = false;
         this.rejected = false;

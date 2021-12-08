@@ -112,8 +112,12 @@ class EvidenceManager {
     }
 
     findEvidenceByIndex(index) {
+        let e;
+
         this.evidences.forEach(evidence => {
-            if (evidence.index == index) return evidence;
+            if (evidence.index == index) e = evidence;
         });
+
+        return e;
     }
 }

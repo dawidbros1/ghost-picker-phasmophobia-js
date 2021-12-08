@@ -4,6 +4,7 @@ class Ghost {
         this.power = array['power'];
         this.weakness = array['weakness'];
         this.evidences = array['evidences'];
+        this.output = array['output'] ?? null;
     }
 
     render(evidences, details, eManager, ghostsBox) {
