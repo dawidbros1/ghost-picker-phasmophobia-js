@@ -48,7 +48,8 @@ class GhostDatabase {
                 'name': "Revenant",
                 'power': "Prędkość Revenanta zwiększa się gdy atakuje ofiarę",
                 'weakness': "Ukrycie się przed nim sprawi, że będzie wolniejszy",
-                'evidences': [4, 3, 6]
+                'evidences': [4, 3, 6],
+                'output': "Rewenant"
             },
             {
                 'name': "Shade",
@@ -66,7 +67,8 @@ class GhostDatabase {
                 'name': "Yurei",
                 'power': "Yurei jest znany z wywierania silnego wpływu na ludzką psychikę",
                 'weakness': "Zapalania kadzidła w pokoju Yurei powoduje, że nie błąka się po lokacji przez dłuższy czas",
-                'evidences': [4, 6, 7]
+                'evidences': [4, 6, 7],
+                'output': "yurej"
             },
             {
                 'name': "Oni",
@@ -84,7 +86,8 @@ class GhostDatabase {
                 'name': "Yokai",
                 'power': "Rozmowa w jego pobliżu zdenerwuje go i zwiększy szansę na atak",
                 'weakness': "Podczas nawiedzania słyszy tylko najbliższy głos",
-                'evidences': [1, 4, 7]
+                'evidences': [1, 4, 7],
+                'output': 'Yoka i'
             },
             {
                 'name': "Goryo",
@@ -96,7 +99,8 @@ class GhostDatabase {
                 'name': "Myling",
                 'power': "Myling znany jest z cichego zachowania podczas polowania.",
                 'weakness': "Mylingi częściej wydają paranormalne dźwięki",
-                'evidences': [5, 2, 3]
+                'evidences': [5, 2, 3],
+                'output': "majling"
             },
             {
                 'name': "Onryo",
@@ -106,21 +110,24 @@ class GhostDatabase {
             },
             {
                 'name': "The Twins",
-                'power': "Każdy z blożiaków może się rozgniewać i zaatakować swoją ofiarę",
+                'power': "Każdy z bliźniaków może się rozgniewać i zaatakować swoją ofiarę",
                 'weakness': "Często wchodzą w interakcje z otoczeniem w tym samym czasie",
-                'evidences': [5, 1, 6]
+                'evidences': [5, 1, 6],
+                'output': "de tłins"
             },
             {
                 'name': "Raiju",
                 'power': "Raiju pobiera energię z pobliskich urządzeń elektrycznych dzięki czemu porusza się szybciej",
                 'weakness': "Raiju nieustannie zakłuca działanie sprzętu elektronicznego ułatwiając śledzenie podczas ataku",
-                'evidences': [5, 4, 7]
+                'evidences': [5, 4, 7],
+                'output': 'rajdżu'
             },
             {
                 'name': "Obake",
                 'power': "Podczas interkacji z otoczeniem Obake rzadko pozostawia ślady",
                 'weakness': "Czasami ten duch zmienia kształt, pozostawiając po sobie unikalne dowody",
-                'evidences': [5, 2, 4]
+                'evidences': [5, 2, 4],
+                'output': 'obak e'
             }
         ];
     }
