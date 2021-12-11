@@ -12,6 +12,7 @@ class GhostManager {
     showGhosts() {
         var selectedEvidences = this.evidenceManager.getSelectedEvidences();
         var rejectedEvidences = this.evidenceManager.getRejectedEvidences();
+
         var count = selectedEvidences.length;
         this.ghostsBox.innerHTML = "";
 

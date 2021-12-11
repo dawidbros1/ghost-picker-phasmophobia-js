@@ -1,8 +1,6 @@
-
 class GhostDatabase {
     constructor() {
-        this.ghosts = [
-            {
+        this.ghosts = [{
                 'name': 'Spirit',
                 'power': 'Brak',
                 'weakness': 'Użycie kadzidła w pokoju powstrzyma ducha przed atakiem na dłuższy czas',
@@ -128,6 +126,12 @@ class GhostDatabase {
                 'weakness': "Czasami ten duch zmienia kształt, pozostawiając po sobie unikalne dowody",
                 'evidences': [5, 2, 4],
                 'output': 'obak e'
+            },
+            {
+                'name': "Mimik",
+                'power': "Nie jesteśmy świadomi pewni do czego zdolny jest ten duch, bądź ostrożny",
+                'weakness': "W kilku raportach odnotowane Orby w pobliżu naśladowców",
+                'evidences': [1, 2, 6, 8],
             }
         ];
     }

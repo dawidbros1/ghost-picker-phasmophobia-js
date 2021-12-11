@@ -18,23 +18,20 @@ class Ghost {
 
         html += '<div> <span class="bold">Dowody: </span>';
 
+        // Iteracja po dowowach ducha
         for (var j = 0; j < this.evidences.length; j++) {
-            var evidencesIndex = this.evidences[j];
-            var selected = false;
+            var evidence = eManager.findEvidenceByIndex(this.evidences[j]);  // Pobierz j-ty dowód
 
-            for (var k = 0; k < evidences.length; k++) {
-                if (evidences[k] == evidencesIndex) {
-                    selected = true;
-                }
-            }
-
-            if (selected) {
-                html += '<span class = "green">' + eManager.evidences[evidencesIndex - 1].name + '</span>, ';
+            if (evidence.selected) {
+                html += '<span class = "green">' + evidence.name + '</span>, ';
             }
             else {
-                let cl = "red";
-                if (evidences.length == 2) cl += " bold"
-                html += '<span class = "' + cl + '">' + eManager.evidences[evidencesIndex - 1].name + '</span>, ';
+                if (evidences.length >= 2) {
+                    html += '<span class = "red bold">' + evidence.name + '</span>, ';
+                }
+                else {
+                    html += '<span class = "red">' + evidence.name + '</span>, ';
+                }
             }
         }
 

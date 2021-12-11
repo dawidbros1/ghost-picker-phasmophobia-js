@@ -71,14 +71,16 @@ class SpeechListener {
                 this.speech.text = "";
                 console.log("Wypowiedzaine słowo to: " + word);
 
-                if (this.dictionary.getWords('spirit_box').includes(word)) { index = 1; }
-                else if (this.dictionary.getWords('fingerprints').includes(word)) { index = 2; }
-                else if (this.dictionary.getWords('book').includes(word)) { index = 3 }
-                else if (this.dictionary.getWords('orb').includes(word)) { index = 4 }
-                else if (this.dictionary.getWords('EMF').includes(word)) { index = 5 }
-                else if (this.dictionary.getWords('temperature').includes(word)) { index = 6 }
-                else if (this.dictionary.getWords('dotc').includes(word)) { index = 7 }
-                else if (this.dictionary.getWords('reset').includes(word)) {
+                if (this.dictionary.getSection('spirit_box').includes(word)) { index = 1; }
+                else if (this.dictionary.getSection('fingerprints').includes(word)) { index = 2; }
+                else if (this.dictionary.getSection('book').includes(word)) { index = 3 }
+                else if (this.dictionary.getSection('orb').includes(word)) { index = 4 }
+                else if (this.dictionary.getSection('EMF').includes(word)) { index = 5 }
+                else if (this.dictionary.getSection('temperature').includes(word)) { index = 6 }
+                else if (this.dictionary.getSection('dotc').includes(word)) { index = 7 }
+                else if (this.dictionary.getSection('fake').includes(word)) { index = 8 }
+
+                if (this.dictionary.getSection('reset').includes(word)) {
                     this.evidenceManager.clearEvidences();
                     this.speech.text = "Wybrane dowody zostały zresetowane";
                 }

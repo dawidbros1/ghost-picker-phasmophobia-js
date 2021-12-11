@@ -33,7 +33,7 @@ class EvidenceManager {
         let intersection = SE.includes(e.index);
 
         if (RE.includes(e.index) == false) {
-            if ((intersection == false && SE.length < 3) || intersection == true) {
+            if ((intersection == false && SE.length < 4) || intersection == true) {
                 e.select();
                 this.ghostManager.showGhosts();
                 return true;
@@ -51,6 +51,12 @@ class EvidenceManager {
                 selectedEvidences.push(evidence.index);
             }
         });
+
+        const index = selectedEvidences.indexOf(8);
+
+        if (index != -1) {
+            selectedEvidences.splice(index, 1);
+        }
 
         return selectedEvidences;
     }
