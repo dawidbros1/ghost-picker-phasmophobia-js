@@ -52,12 +52,6 @@ class EvidenceManager {
             }
         });
 
-        const index = selectedEvidences.indexOf(8);
-
-        if (index != -1) {
-            selectedEvidences.splice(index, 1);
-        }
-
         return selectedEvidences;
     }
 

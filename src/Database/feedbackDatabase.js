@@ -4,7 +4,7 @@ class FeedbackDatabase {
             'Duchem, który nawiedzał ten budynek jest ',
             'Wykryty duch to ',
             'To miejsce zostało nawiedzone przez ducha ',
-            'Daj dwie stówki, znalazłem ducha raiju ',
+            'Daj dwie stówki, znalazłem ducha ',
             'Budynek został nawiedzony przez ducha ',
             'Dobra robota! Teraz musimy tylko wyegzorcyzmować ducha ',
             'Przepadnij w czeluści piekieł duchu ',

@@ -78,7 +78,6 @@ class SpeechListener {
                 else if (this.dictionary.getSection('EMF').includes(word)) { index = 5 }
                 else if (this.dictionary.getSection('temperature').includes(word)) { index = 6 }
                 else if (this.dictionary.getSection('dotc').includes(word)) { index = 7 }
-                else if (this.dictionary.getSection('fake').includes(word)) { index = 8 }
 
                 if (this.dictionary.getSection('reset').includes(word)) {
                     this.evidenceManager.clearEvidences();
@@ -99,7 +98,7 @@ class SpeechListener {
                     let name = e.output == null ? e.name : e.output;
                     this.speech.text = "Dowód " + name + "został " + status;
 
-                    if (this.evidenceManager.getSelectedEvidences().length == 3) {
+                    if (this.evidenceManager.getSelectedEvidences().length >= 3) {
                         setTimeout(() => {
                             let ghost = this.ghostManager.findGhost();
 
@@ -107,10 +106,6 @@ class SpeechListener {
                                 let ghostName = ghost.output == null ? ghost.name : ghost.output;
                                 this.speak(this.feedback.random() + ghostName);
                             }
-                            else {
-                                this.speak("Zaznaczone dowody nie wskazują na obecność znanego ducha!");
-                            }
-
                         }, 2000)
                     }
                 }

@@ -23,11 +23,6 @@ class EvidenceDatabase {
                 img: 'orb.jpg',
             },
             {
-                index: 8,
-                name: 'FAKE',
-                img: 'fake_orb.jpg',
-            },
-            {
                 index: 5,
                 name: 'EMF Poziom 5',
                 img: 'EMF.jpg',

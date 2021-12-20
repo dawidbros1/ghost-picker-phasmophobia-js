@@ -13,7 +13,6 @@ class Dictionary {
         this.words['temperature'] = ['temperatura', 'piździ', 'zimno', 'mroźna temperatura'];
         this.words['dotc'] = ['zielone', 'dots', 'projektor', 'zielona', 'projektro dots', 'projektor dotz'];
         this.words['reset'] = ['reset', 'restart'];
-        this.words['fake'] = ['fake', 'fejk'];
     }
 
     getKeys() {

@@ -31,23 +31,31 @@ class GhostManager {
 
     findGhost() {
         var SE = this.evidenceManager.getSelectedEvidences();
-        var selectedGhost;
+        var selectedGhost = [];
+        var ghost;
 
-        if (SE.length == 3) {
+        if (SE.length > 2) {
             this.ghosts.forEach(ghost => {
                 let count = 0;
                 ghost.evidences.forEach(evidence => {
-                    if (evidence == SE[0] || evidence == SE[1] || evidence == SE[2]) {
-                        count++;
-                    }
+                    SE.forEach(E => {
+                        if (evidence == E) { count++ }
+                    })
                 });
 
-                if (count == 3) {
-                    selectedGhost = ghost;
+                if (count == SE.length) {
+                    selectedGhost.push(ghost);
                 }
             });
         }
 
-        return selectedGhost;
+        if (selectedGhost.length != 1) {
+            ghost = "undefined";
+        }
+        else {
+            ghost = selectedGhost[0];
+        }
+
+        return ghost;
     }
 }
