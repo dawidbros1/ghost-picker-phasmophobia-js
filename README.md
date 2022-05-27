@@ -1,13 +1,15 @@
 # Phasmophobia - Ghost Picker
-Jest to aplikacja pomocnicza do gry Phasmophobia, która pomaga w zidentyfikowaniu ducha podczas rozgrywki.
+This is a helper application to phasmophobia game that helps you identify the ghost during gameplay.
 
-## Użyte technologie
-• HTML5 \
-• CSS3 \
-• JavaScript
+### Build with
+1. HTML 5
+2. CSS 3
+3. JavaScript
 
-## Funkcjonalności
-• Zaznaczanie oraz odznaczenie dowodów \
-• Eliminacja dowodów \
-• Wyświetlanie listy duchów \
-• Sterowanie głosem
+### Features
+1. Checking and unchecking the evidences
+2. Elimination of evidence that was not found
+3. Displaying list of ghosts
+4. Voice application control
+
+# DOCUMENTATION - IN FUTURE
