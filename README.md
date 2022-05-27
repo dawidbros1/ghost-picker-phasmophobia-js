@@ -12,4 +12,7 @@ This is a helper application to phasmophobia game that helps you identify the gh
 3. Displaying list of ghosts
 4. Voice application control
 
+### Installation Instructions
+1. Run `git clone https://github.com/dawidbros1/ghost-picker-phasmophobia-js`
+
 # DOCUMENTATION - IN FUTURE
