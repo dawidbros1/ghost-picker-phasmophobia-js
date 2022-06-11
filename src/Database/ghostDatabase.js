@@ -143,13 +143,13 @@ class GhostDatabase {
             'name': "Deagen",
             'power': "Deogen nieustatnie wyczuwa żywych. Możesz uciekać, ale nie możesz się ukryć",
             'weakness': "Deogen wymaga duzo energi, aby się uformowac i porusza się bardzo powoli",
-            'evidences': [1, 2, 7],
+            'evidences': [1, 3, 7],
         },
         {
             'name': "Thaye",
             'power': "Po wkroczeniu do lolacji Thaye stanie się bardzo katywny i zwinny",
             'weakness': "Thaye z czasem słabnie, co czyni słabszym, wolniejszym i mniej agresywnym",
-            'evidences': [4, 2, 7],
+            'evidences': [4, 3, 7],
         }
         ];
     }
