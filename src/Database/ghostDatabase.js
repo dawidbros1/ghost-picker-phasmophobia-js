@@ -27,7 +27,7 @@ class GhostDatabase {
         {
             'name': 'Banshee',
             'power': 'Banshee skupia się tylko na jednej osobie',
-            'weakness': 'Lękiem Banshee jest Krucyfiks i będzie mniej agresywna w jego obecności',
+            'weakness': 'Krzyki Banshee słychać czasami przy użyciu mikrofonu parabolicznego',
             'evidences': [2, 4, 7]
         },
         {
@@ -57,8 +57,8 @@ class GhostDatabase {
         },
         {
             'name': "Demon",
-            'power': "Demon będzie atakował częściej niż jakikolwiek inny duch",
-            'weakness': "Zadanie demonowi udanego pytania poprzez tabliczkę Ouija nie obniży zdrowia psychicznego użytkownika",
+            'power': "Demony inicjują polowania częściej niż inne duchy",
+            'weakness': "Demony boją się krucyfuksu i będą mniej agresywne w jego pobliżu",
             'evidences': [2, 3, 6]
         },
         {
@@ -132,6 +132,24 @@ class GhostDatabase {
             'power': "Nie jesteśmy świadomi pewni do czego zdolny jest ten duch, bądź ostrożny",
             'weakness': "W kilku raportach odnotowane Orby w pobliżu naśladowców",
             'evidences': [1, 2, 6, 4],
+        },
+        {
+            'name': "Moroi",
+            'power': "Im słabsze są jego ofiary tym silniejszy Moroi się staje",
+            'weakness': "Morai cierpią na hipersomnia, więc słabną na dłuszczy czas",
+            'evidences': [1, 3, 6],
+        },
+        {
+            'name': "Deagen",
+            'power': "Deogen nieustatnie wyczuwa żywych. Możesz uciekać, ale nie możesz się ukryć",
+            'weakness': "Deogen wymaga duzo energi, aby się uformowac i porusza się bardzo powoli",
+            'evidences': [1, 2, 7],
+        },
+        {
+            'name': "Thaye",
+            'power': "Po wkroczeniu do lolacji Thaye stanie się bardzo katywny i zwinny",
+            'weakness': "Thaye z czasem słabnie, co czyni słabszym, wolniejszym i mniej agresywnym",
+            'evidences': [4, 2, 7],
         }
         ];
     }
